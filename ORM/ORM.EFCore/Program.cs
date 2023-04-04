@@ -14,6 +14,13 @@ builder.Services.AddDbContext<PublisherDbContext>(options =>
 
 var app = builder.Build();
 
+// migrate any database changes on startup (includes initial db creation)
+using (var scope = app.Services.CreateScope())
+{
+    var dataContext = scope.ServiceProvider.GetRequiredService<PublisherDbContext>();
+    dataContext.Database.Migrate();
+}
+
 app.MapGet("/Authors/{authorId:int?}", async (PublisherDbContext db, int? authorId) =>
 {
     return authorId.HasValue
