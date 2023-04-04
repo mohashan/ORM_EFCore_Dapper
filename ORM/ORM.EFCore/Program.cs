@@ -14,10 +14,19 @@ builder.Services.AddDbContext<PublisherDbContext>(options =>
 
 var app = builder.Build();
 
-app.MapGet("/Authors", async (PublisherDbContext db) => await db.Authors.ToListAsync());
+app.MapGet("/Authors/{authorId:int?}", async (PublisherDbContext db, int? authorId) =>
+{
+    return authorId.HasValue
+    ? Results.Ok(await db.Authors.FirstOrDefaultAsync(c => c.Id == authorId))
+    : Results.Ok(await db.Authors.ToListAsync());
+});
 
-app.MapGet("/Books", async (PublisherDbContext db) => await db.Books.ToListAsync());
-
+app.MapGet("/Books/{bookId:int?}", async (PublisherDbContext db, int? bookId) =>
+{
+    return bookId.HasValue
+    ? Results.Ok(await db.Books.FirstOrDefaultAsync(c => c.Id == bookId))
+    : Results.Ok(await db.Books.ToListAsync());
+});
 
 if (app.Environment.IsDevelopment())
 {
