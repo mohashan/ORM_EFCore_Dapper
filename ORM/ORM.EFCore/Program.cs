@@ -17,6 +17,7 @@ var app = builder.Build();
 // migrate any database changes on startup (includes initial db creation)
 using (var scope = app.Services.CreateScope())
 {
+    // Commit Migration to have db on local sql server, plus some sample data
     var dataContext = scope.ServiceProvider.GetRequiredService<PublisherDbContext>();
     dataContext.Database.Migrate();
 }

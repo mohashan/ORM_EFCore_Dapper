@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM.EFCore", "ORM.EFCore\ORM.EFCore.csproj", "{75415EFA-6991-4C43-9BFF-31C3629105D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORM.EFCore", "ORM.EFCore\ORM.EFCore.csproj", "{75415EFA-6991-4C43-9BFF-31C3629105D6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C48E36D4-950F-4549-A9E4-5FC35E1C7D1A} = {C48E36D4-950F-4549-A9E4-5FC35E1C7D1A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM.Dapper", "ORM.Dapper\ORM.Dapper.csproj", "{3B2BAFD5-6089-4344-BE91-95F1D332FB41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORM.Dapper", "ORM.Dapper\ORM.Dapper.csproj", "{3B2BAFD5-6089-4344-BE91-95F1D332FB41}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C48E36D4-950F-4549-A9E4-5FC35E1C7D1A} = {C48E36D4-950F-4549-A9E4-5FC35E1C7D1A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM.Model", "ORM.Model\ORM.Model.csproj", "{C48E36D4-950F-4549-A9E4-5FC35E1C7D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORM.Model", "ORM.Model\ORM.Model.csproj", "{C48E36D4-950F-4549-A9E4-5FC35E1C7D1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM.NHibernate", "ORM.NHibernate\ORM.NHibernate.csproj", "{6F9FC7CA-2CF1-4771-9570-4F8E251DD381}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C48E36D4-950F-4549-A9E4-5FC35E1C7D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C48E36D4-950F-4549-A9E4-5FC35E1C7D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C48E36D4-950F-4549-A9E4-5FC35E1C7D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9FC7CA-2CF1-4771-9570-4F8E251DD381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9FC7CA-2CF1-4771-9570-4F8E251DD381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9FC7CA-2CF1-4771-9570-4F8E251DD381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9FC7CA-2CF1-4771-9570-4F8E251DD381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
