@@ -1,6 +1,8 @@
 ﻿using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Cfg;
 using NHibernate;
+using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class NHibernateSessionFactory
 {
@@ -22,5 +24,39 @@ public class NHibernateSessionFactory
             }
             return _sessionFactory;
         }
+    }
+
+
+    public class Person
+    {
+        public virtual int Id { get; protected set; }
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
+    }
+
+    public class Author
+    {
+        public virtual int Id { get; protected set; }
+
+        public virtual string Name { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<Book> Books { get; set; }
+
+    }
+
+    public class Book
+    {
+        public virtual int Id { get; protected set; }
+
+        public virtual string Title { get; set; }
+        public virtual string Description { get; set; } = string.Empty;
+
+        [JsonIgnore]
+        public virtual Author Author { get; set; }
+
+        [ForeignKey("Author")]
+        public virtual int AuthorId { get; set; }
+        public virtual int Price { get; set; }
     }
 }

@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
 
 IDbConnection connection = new SqlConnection("Server=.;Database=PublisherDb;Trusted_Connection=True;TrustServerCertificate=True;");

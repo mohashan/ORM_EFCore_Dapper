@@ -1,5 +1,5 @@
 ﻿using FluentNHibernate.Mapping;
-using ORM.Model;
+using static NHibernateSessionFactory;
 
 public class BookMap : ClassMap<Book>
 {
